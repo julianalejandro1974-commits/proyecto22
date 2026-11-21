@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz Challenge: pon a prueba tus conocimientos de programación.">
+    <title>Quiz Challenge | Examen de historia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/questions.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="app-container">
+        <header class="site-header">
+            <a class="brand" href="#" aria-label="Quiz Challenge, inicio">
+                <span class="brand-icon">Q</span>
+                <span>Quiz<span class="brand-accent">Challenge</span></span>
+            </a>
+            <span class="header-label">UN VIAJE POR LA HISTORIA</span>
+        </header>
+
+        <section id="start-screen" class="screen start-screen">
+            <div class="hero-icon" aria-hidden="true">✦</div>
+            <p class="eyebrow">BIENVENIDO AL RETO</p>
+            <h1>¿Cuánto sabes de <span>historia</span>?</h1>
+            <p class="intro">Viaja por distintas épocas, demuestra tus conocimientos y descubre cuánto sabes sobre el pasado.</p>
+
+            <div class="quiz-details">
+                <div class="detail-item">
+                    <span class="detail-icon">▤</span>
+                    <div><strong id="total-questions">10</strong><small>Preguntas</small></div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">◷</span>
+                    <div><strong>60 s</strong><small>Por pregunta</small></div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">★</span>
+                    <div><strong>10 pts</strong><small>Máximo inicial</small></div>
+                </div>
+            </div>
+
+            <button id="start-button" class="primary-button">Comenzar examen <span aria-hidden="true">→</span></button>
+            <p class="start-note">Lee cada pregunta con atención. ¡Mucha suerte!</p>
+        </section>
+
+        <section id="quiz-screen" class="screen quiz-screen hidden" aria-live="polite">
+            <div class="quiz-topline">
+                <span id="question-counter" class="eyebrow">PREGUNTA 1 DE 10</span>
+                <div class="score-pill">★ <span id="score">0</span> puntos</div>
+            </div>
+
+            <div class="progress-track" aria-label="Progreso del examen">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div class="timer-row">
+                <span>Tiempo restante</span>
+                <strong id="timer" class="timer">01:00</strong>
+            </div>
+            <div class="timer-track"><div id="timer-bar" class="timer-bar"></div></div>
+
+            <article class="question-card">
+                <p id="question-category" class="category-label">PROGRAMACIÓN</p>
+                <h2 id="question-text">Pregunta</h2>
+                <div id="answers" class="answers-list"></div>
+                <div id="feedback" class="feedback hidden" role="status"></div>
+                <div class="card-footer">
+                    <span id="answer-hint">Selecciona una respuesta para continuar.</span>
+                    <button id="next-button" class="primary-button next-button" disabled>Siguiente <span aria-hidden="true">→</span></button>
+                </div>
+            </article>
+        </section>
+
+        <section id="result-screen" class="screen result-screen hidden">
+            <div class="result-icon" aria-hidden="true">🏆</div>
+            <p class="eyebrow">EXAMEN FINALIZADO</p>
+            <h1 id="result-title">¡Buen trabajo!</h1>
+            <p id="result-message" class="intro">Este es tu resultado.</p>
+            <div class="final-score-card">
+                <span>PUNTUACIÓN FINAL</span>
+                <strong id="final-score">0</strong>
+                <small id="score-out-of">de 10 puntos</small>
+            </div>
+            <div class="result-stats">
+                <div><strong id="correct-count">0</strong><span>Correctas</span></div>
+                <div><strong id="incorrect-count">0</strong><span>Incorrectas</span></div>
+                <div><strong id="timeout-count">0</strong><span>Sin responder</span></div>
+            </div>
+            <div class="review-heading">
+                <h2>Revisión de respuestas</h2>
+                <p>Consulta tus respuestas y aprende de los errores.</p>
+            </div>
+            <div id="review-list" class="review-list"></div>
+            <button id="restart-button" class="primary-button restart-button">Volver a intentarlo <span aria-hidden="true">↻</span></button>
+        </section>
+
+        <footer class="site-footer">Quiz Challenge <span>•</span> Aprende, practica y mejora.</footer>
+    </main>
+</body>
+</html>
